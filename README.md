@@ -1,28 +1,37 @@
 # DeepSeek Coding Agent Skill
 
-A practical, provider-aware Agent Skill for getting reliable software-engineering results from DeepSeek-backed coding assistants. It focuses on repo-grounded changes, debugging, verification, current API references, safe tool use, and integrating **DeepSeek API** with compatible apps.
+A substantial, portable Agent Skill for making DeepSeek-backed coding assistants more effective across real software projects. It uses progressive-disclosure playbooks inspired by established agent-skill libraries: concise core instructions, focused references, practical templates, and lightweight validation.
 
-## What's included
+## What it teaches
 
-- `SKILL.md` — the loadable skill instructions.
-- `references/deepseek-api.md` — official API references, verification checklist, and safe request example.
-- `references/app-integrations.md` — how to connect compatible third-party apps, and the important boundary between the consumer DeepSeek app/site and the developer API.
-- `references/coding-workflow.md` — task templates and a repository-first engineering workflow.
-- `references/tool-calling-safety.md` — validation and permission guidance for agent tools.
+- Repository exploration and project-convention following
+- Feature implementation, bug fixing, root-cause debugging, code review, and refactoring
+- Frontend/UI quality, responsive behavior, accessibility, and state handling
+- Backend, API, database, test, documentation, and operations workflows
+- Language/version-aware coding across common stacks without guessing APIs
+- Defensive security checks and safe tool usage
+- DeepSeek API integration while distinguishing the consumer web/mobile app from the API
+- Evidence-based verification and honest completion reports
+
+## Repository map
+
+- `SKILL.md` — main skill instructions and progressive-disclosure routing.
+- `references/` — task playbooks, engineering workflow, frontend quality, testing/debugging, secure coding, language guidance, API integration, and tool-call safety.
 - `agents/openai.yaml` — optional picker metadata for compatible skill catalogs.
-- `scripts/validate_skill.py` — dependency-free structural validator.
-- `tests/` — standard-library tests for the skill's basic structure.
+- `scripts/validate_skill.py` — dependency-free checks for required files, metadata, links, and frontmatter size.
+- `tests/` — standard-library regression tests for repository structure and skill routing.
 
 ## Install/use
 
-This repository follows the portable Agent Skill convention: a skill directory with `SKILL.md` and optional references/scripts. Install it with the skill manager supported by your coding assistant, or copy this repository (or its contents) into that assistant's skills directory. Exact install locations differ by host; follow that product's current documentation.
+Use the installer supported by your coding assistant or copy this repository into its skills directory. Exact paths and supported metadata differ between hosts; follow the host's current documentation. The skill is portable Agent Skill content, not a DeepSeek model modification and not a way to control the consumer DeepSeek website/app.
 
-After installation, ask naturally, for example:
+Try prompts such as:
 
-- “Use DeepSeek to inspect this repo, fix the failing test, and report checks actually run.”
-- “Help me connect DeepSeek API to this app; check the official docs and keep my API key secure.”
-- “Can I use my DeepSeek mobile/web app account inside this other app? Explain supported options and limitations.”
-- “Review this diff for correctness and security issues; cite concrete evidence.”
+- “Inspect this project and implement the requested feature with tests. Follow its instructions and report checks actually run.”
+- “Reproduce this bug, trace the root cause, make a minimal fix, and add a regression test.”
+- “Review this diff for actionable correctness and security issues; cite file/line evidence.”
+- “Build a polished responsive page consistent with this repository's stack, including loading, empty, error, and accessible interaction states.”
+- “Integrate the current DeepSeek API in this backend. Verify official docs and keep the API key server-side.”
 
 ## Validate
 
@@ -33,13 +42,13 @@ python3 scripts/validate_skill.py
 python3 -m unittest discover -s tests -v
 ```
 
-## Accuracy note
+## Accuracy and scope
 
-DeepSeek model names, aliases, endpoints, features, context limits, and pricing can change. This repository deliberately avoids pinning unverified model IDs or limits. Check DeepSeek's official documentation and live model list before implementation or deployment. The consumer web/mobile product is distinct from the developer API; this skill does not claim that consumer chats or app sessions can be embedded or controlled by third-party apps.
+Model IDs, endpoints, features, limits, and pricing can change; confirm them from current official DeepSeek docs. Framework APIs and commands are version-specific; inspect project manifests and maintained docs. This skill provides guidance, not an execution environment, and makes no claim that consumer chat sessions can be embedded or controlled by third-party apps.
 
-## References
+## Official/reference links
 
-- [DeepSeek API documentation](https://api-docs.deepseek.com/)
+- [DeepSeek API docs](https://api-docs.deepseek.com/)
 - [DeepSeek API platform](https://platform.deepseek.com/)
 - [DeepSeek consumer chat](https://chat.deepseek.com/)
 - [Agent Skills specification](https://agentskills.io/)
