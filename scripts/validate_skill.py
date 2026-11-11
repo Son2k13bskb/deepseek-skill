@@ -10,6 +10,7 @@ REQUIRED = (
     ROOT / "README.md",
     ROOT / "agents" / "openai.yaml",
     ROOT / "references" / "deepseek-api.md",
+    ROOT / "references" / "app-integrations.md",
     ROOT / "references" / "coding-workflow.md",
     ROOT / "references" / "tool-calling-safety.md",
 )

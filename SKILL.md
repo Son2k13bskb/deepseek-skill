@@ -1,6 +1,6 @@
 ---
 name: deepseek-coding-agent
-description: Help a coding assistant use DeepSeek effectively for software engineering, repository exploration, debugging, implementation, code review, API integration, and tool-calling. Use when selecting or configuring DeepSeek models, improving prompts/workflows for DeepSeek, or building with the DeepSeek API. Verify fast-changing model IDs and API details against official documentation instead of guessing.
+description: Help a coding assistant use DeepSeek effectively for software engineering, repository exploration, debugging, implementation, code review, API integration, and tool-calling. Use when selecting or configuring DeepSeek models, improving prompts/workflows for DeepSeek, connecting DeepSeek API to compatible apps, or building with the API. Verify fast-changing model IDs and API details against official documentation instead of guessing.
 ---
 
 # DeepSeek Coding Agent
@@ -67,9 +67,9 @@ A useful coding request template:
 
 > Inspect the repository instructions and the relevant code/tests. Implement **[outcome]** while preserving **[constraints]**. First identify the evidence and likely approach; then make the smallest complete change. Run **[checks]** and report files changed, results, and remaining risks. Do not invent APIs or claim unrun checks passed.
 
-## DeepSeek API work
+## DeepSeek API and app integration
 
-For API integration tasks, consult [`references/deepseek-api.md`](references/deepseek-api.md) before writing code. Use official DeepSeek documentation as the source of truth for endpoint, model IDs, parameters, tool calls, output formats, and limits. Keep API keys in environment variables or a secret manager, never in source control. Validate tool-call arguments and execute tools only in the host application's controlled runtime.
+For API integration tasks, consult [`references/deepseek-api.md`](references/deepseek-api.md). For connecting a compatible third-party app or clarifying whether the consumer website/mobile app can be embedded, consult [`references/app-integrations.md`](references/app-integrations.md). The supported documented route for building integrations is the API; do not claim that consumer app sessions, chats, or subscription access can be embedded or controlled. Use official docs for current endpoints and model IDs. Keep API keys server-side, validate tool-call arguments, and execute tools only in the host application's controlled runtime.
 
 ## Tool use and safety
 

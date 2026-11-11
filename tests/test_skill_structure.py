@@ -21,6 +21,7 @@ class SkillStructureTests(unittest.TestCase):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("name: deepseek-coding-agent", skill)
         self.assertIn("references/deepseek-api.md", skill)
+        self.assertIn("references/app-integrations.md", skill)
         self.assertIn("references/tool-calling-safety.md", skill)
 
 
