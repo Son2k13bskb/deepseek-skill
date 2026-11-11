@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepSeek Coding Agent"
+  short_description: "Repo-grounded coding, debugging, and safe DeepSeek API guidance"
+  default_prompt: "Use DeepSeek's coding workflow: inspect the repo, make a focused change, run relevant checks, and report evidence and risks. Verify current API details from official docs."
