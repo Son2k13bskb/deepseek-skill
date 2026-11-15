@@ -39,7 +39,7 @@ Use the relevant checklist; don't apply every section to every task. Read projec
 
 ## Frontend/product UI
 
-Read [`frontend-quality.md`](frontend-quality.md). Identify the framework, design system, assets, routes, and existing interaction patterns before introducing new UI.
+Read [`frontend-quality.md`](frontend-quality.md). Before coding, identify the product/page purpose, user and primary action, existing visual system, framework/routes/assets, and local hosting workflow. Define concrete visual and interaction acceptance criteria. Build the actual responsive product UI with semantic HTML, coherent visual hierarchy, and working controls/state—not a slide deck or static mockup unless explicitly requested. Verify real project checks and report browser/local-host validation only if it was actually performed.
 
 ## Backend and services
 
