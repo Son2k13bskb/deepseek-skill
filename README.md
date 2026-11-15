@@ -1,16 +1,17 @@
 # DeepSeek Coding Agent Skill
 
-A substantial, portable Agent Skill for making DeepSeek-backed coding assistants more effective across real software projects. It uses progressive-disclosure playbooks inspired by established agent-skill libraries: concise core instructions, focused references, practical templates, and lightweight validation.
+A practical, portable Agent Skill for making DeepSeek-backed coding assistants more effective across real software projects. It emphasizes repository-grounded implementation, coherent product UI, working interactions, and evidence-based verification. It improves instructions and workflow; it does not change model weights or guarantee parity with another model.
 
 ## What it teaches
 
 - Repository exploration and project-convention following
-- Feature implementation, bug fixing, root-cause debugging, code review, and refactoring
-- Frontend/UI quality, responsive behavior, accessibility, and state handling
+- Feature implementation, bug fixing, debugging, code review, and refactoring
+- Product-minded frontend UI: visual hierarchy, polished responsive layouts, semantic HTML, real interactions, and accessible states
+- Respect for existing local development, routing, assets, API, and hosting/deployment conventions
 - Backend, API, database, test, documentation, and operations workflows
-- Language/version-aware coding across common stacks without guessing APIs
-- Defensive security checks and safe tool usage
-- DeepSeek API integration while distinguishing the consumer web/mobile app from the API
+- Language/version-aware coding without guessing APIs
+- Defensive security and safe tool usage
+- DeepSeek API integration and the distinction between the consumer app and API
 - Evidence-based verification and honest completion reports
 
 ## Repository map
@@ -23,14 +24,15 @@ A substantial, portable Agent Skill for making DeepSeek-backed coding assistants
 
 ## Install/use
 
-Use the installer supported by your coding assistant or copy this repository into its skills directory. Exact paths and supported metadata differ between hosts; follow the host's current documentation. The skill is portable Agent Skill content, not a DeepSeek model modification and not a way to control the consumer DeepSeek website/app.
+Use the installer supported by your coding assistant or copy this repository into its skills directory. Exact paths and supported metadata differ between hosts; follow the host's current documentation.
 
 Try prompts such as:
 
 - “Inspect this project and implement the requested feature with tests. Follow its instructions and report checks actually run.”
 - “Reproduce this bug, trace the root cause, make a minimal fix, and add a regression test.”
 - “Review this diff for actionable correctness and security issues; cite file/line evidence.”
-- “Build a polished responsive page consistent with this repository's stack, including loading, empty, error, and accessible interaction states.”
+- “Build a polished, responsive web app page for this product—not a slide or static mockup. Inspect the existing framework, design system, assets, routes, and local run process first. Make the hierarchy, typography, spacing, palette, and interactions feel intentional; ensure every control works and verify the main flow.”
+- “Improve this UI: keep the current local hosting and API conventions, use semantic HTML, implement loading/empty/error states, and check mobile layout and keyboard access. Tell me which checks you actually ran.”
 - “Integrate the current DeepSeek API in this backend. Verify official docs and keep the API key server-side.”
 
 ## Validate
@@ -44,7 +46,7 @@ python3 -m unittest discover -s tests -v
 
 ## Accuracy and scope
 
-Model IDs, endpoints, features, limits, and pricing can change; confirm them from current official DeepSeek docs. Framework APIs and commands are version-specific; inspect project manifests and maintained docs. This skill provides guidance, not an execution environment, and makes no claim that consumer chat sessions can be embedded or controlled by third-party apps.
+Model IDs, endpoints, features, limits, and pricing can change; confirm them from current official DeepSeek docs. Framework APIs and commands are version-specific; inspect project manifests and maintainers' docs. Browser, localhost, and deployment behavior can only be claimed as verified when the relevant checks were actually run.
 
 ## Official/reference links
 

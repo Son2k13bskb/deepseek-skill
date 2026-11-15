@@ -37,6 +37,21 @@ class SkillStructureTests(unittest.TestCase):
                 self.assertIn(reference, skill)
                 self.assertTrue((ROOT / reference).is_file())
 
+    def test_frontend_guidance_covers_visual_and_product_quality(self):
+        frontend = (ROOT / "references" / "frontend-quality.md").read_text(
+            encoding="utf-8"
+        )
+        for criterion in (
+            "visual decisions",
+            "semantic HTML",
+            "Every visible control must work",
+            "local development",
+            "slide deck",
+            "responsive",
+        ):
+            with self.subTest(criterion=criterion):
+                self.assertIn(criterion.lower(), frontend.lower())
+
     def test_skill_is_concise_and_uses_progressive_disclosure(self):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         self.assertLess(len(skill), 12000)
