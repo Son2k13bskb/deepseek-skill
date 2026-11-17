@@ -2,13 +2,11 @@
 
 ## Unreleased
 
-- Strengthen frontend guidance for product-minded, visually coherent web interfaces, semantic HTML, working UI logic, accessible states, responsive layouts, and local hosting conventions.
-- Clarify that frontend tasks should deliver the requested app/page rather than a slide deck or static mockup unless explicitly requested.
-- Add UI task criteria and prompt examples that request intentional visual hierarchy and honest verification.
-- Expand the core skill into a repository-grounded, all-purpose software engineering workflow.
-- Add progressive-disclosure playbooks for features, debugging, review, refactoring, backend/API, databases, operations, frontend quality, testing, security, and common language ecosystems.
-- Improve structural validation and tests for skill routing, required references, and concise core instructions.
-- Preserve current DeepSeek API verification and consumer-app integration guidance; avoid stale model/endpoint claims.
+- Add a Discord bot engineering playbook for command selection, Components V2, interaction lifecycle, permissions, security, reliability, polished message UI, testing, and deployment safety.
+- Route Discord bot tasks from the core skill and add focused onboarding examples.
+- Strengthen frontend and product UI guidance for coherent visual hierarchy, accessible states, responsive behavior, and real interactions.
+- Improve repository-first execution, logic quality, and evidence-based verification guidance.
+- Keep platform and library claims version-aware and anchored to current official documentation.
 
 ## Initial release
 

@@ -14,6 +14,7 @@ REQUIRED = (
     "references/coding-workflow.md",
     "references/task-playbooks.md",
     "references/frontend-quality.md",
+    "references/discord-bots.md",
     "references/testing-debugging.md",
     "references/secure-coding.md",
     "references/language-guides.md",
