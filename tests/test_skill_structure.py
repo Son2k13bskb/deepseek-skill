@@ -28,6 +28,7 @@ class SkillStructureTests(unittest.TestCase):
             "references/app-integrations.md",
             "references/task-playbooks.md",
             "references/frontend-quality.md",
+            "references/discord-bots.md",
             "references/testing-debugging.md",
             "references/secure-coding.md",
             "references/language-guides.md",
@@ -52,10 +53,26 @@ class SkillStructureTests(unittest.TestCase):
             with self.subTest(criterion=criterion):
                 self.assertIn(criterion.lower(), frontend.lower())
 
+    def test_discord_guide_covers_commands_components_and_safety(self):
+        guide = (ROOT / "references" / "discord-bots.md").read_text(
+            encoding="utf-8"
+        ).lower()
+        for criterion in (
+            "slash/application command",
+            "prefix command",
+            "components v2",
+            "interaction lifecycle",
+            "permissions",
+            "official discord docs",
+            "stale controls",
+        ):
+            with self.subTest(criterion=criterion):
+                self.assertIn(criterion, guide)
+
     def test_skill_is_concise_and_uses_progressive_disclosure(self):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
         self.assertLess(len(skill), 12000)
-        self.assertIn("load only what is needed", skill)
+        self.assertIn("Load only the relevant guidance", skill)
 
 
 if __name__ == "__main__":

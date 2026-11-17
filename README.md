@@ -1,39 +1,53 @@
 # DeepSeek Coding Agent Skill
 
-A practical, portable Agent Skill for making DeepSeek-backed coding assistants more effective across real software projects. It emphasizes repository-grounded implementation, coherent product UI, working interactions, and evidence-based verification. It improves instructions and workflow; it does not change model weights or guarantee parity with another model.
+A practical, repository-grounded Agent Skill for DeepSeek coding assistants. It guides real engineering work across product UI, application logic, Discord bots, APIs, tests, debugging, and safe integrations.
 
-## What it teaches
+## What it helps with
 
-- Repository exploration and project-convention following
-- Feature implementation, bug fixing, debugging, code review, and refactoring
-- Product-minded frontend UI: visual hierarchy, polished responsive layouts, semantic HTML, real interactions, and accessible states
-- Respect for existing local development, routing, assets, API, and hosting/deployment conventions
-- Backend, API, database, test, documentation, and operations workflows
-- Language/version-aware coding without guessing APIs
-- Defensive security and safe tool usage
-- DeepSeek API integration and the distinction between the consumer app and API
-- Evidence-based verification and honest completion reports
+- Inspecting a codebase and following its actual conventions before editing
+- Building complete, polished interfaces with working interactions and meaningful states
+- Designing clear application logic, validation, error handling, and regression tests
+- Creating Discord bots with intentional slash/prefix command choices, interaction flows, and modern Components V2 guidance
+- Integrating APIs without guessing endpoints, library APIs, model identifiers, or platform behavior
+- Verifying changes and reporting evidence honestly
+
+## Quick start
+
+Use the installer supported by your coding assistant or copy this repository into its supported skills directory. Host conventions differ; follow that host's current instructions.
+
+Recommended task flow:
+
+1. Read repository instructions and inspect the relevant code/tests/config.
+2. Define the expected behavior and constraints.
+3. Load the matching reference guide and make a focused implementation.
+4. Verify with the project's real tests, lint, typecheck, or build commands.
+5. Summarize the change, checks run, and anything not verified.
+
+## Discord bot development
+
+For Discord bot tasks, use [`references/discord-bots.md`](references/discord-bots.md). It covers command selection (slash/application commands versus prefix commands), interaction lifecycles, Components V2, polished message UI, permissions, intents, security, persistence, reliability, testing, and framework/version verification.
+
+The guide treats Discord messages as a constrained interface: choose the structure that helps users act, avoid noisy template-like output, make components useful, and handle interaction timeouts and permissions deliberately. Always verify current Discord docs and the project's installed library version before using platform features.
+
+## UI and engineering quality
+
+For web or product UI tasks, the skill emphasizes visual hierarchy, semantic controls, accessible interaction, responsiveness, real application behavior, and loading/empty/error/success states. For all code tasks, it emphasizes repo-first reasoning, clear data flow, boundary validation, focused tests, and truthful verification.
 
 ## Repository map
 
-- `SKILL.md` — main skill instructions and progressive-disclosure routing.
-- `references/` — task playbooks, engineering workflow, frontend quality, testing/debugging, secure coding, language guidance, API integration, and tool-call safety.
-- `agents/openai.yaml` — optional picker metadata for compatible skill catalogs.
-- `scripts/validate_skill.py` — dependency-free checks for required files, metadata, links, and frontmatter size.
-- `tests/` — standard-library regression tests for repository structure and skill routing.
+- `SKILL.md` — core workflow and guide routing
+- `references/` — specialized engineering playbooks, including Discord bots and frontend quality
+- `agents/openai.yaml` — picker metadata for compatible catalogs
+- `scripts/validate_skill.py` — dependency-free structural validation
+- `tests/` — standard-library regression tests
 
-## Install/use
+## Example prompts
 
-Use the installer supported by your coding assistant or copy this repository into its skills directory. Exact paths and supported metadata differ between hosts; follow the host's current documentation.
-
-Try prompts such as:
-
-- “Inspect this project and implement the requested feature with tests. Follow its instructions and report checks actually run.”
-- “Reproduce this bug, trace the root cause, make a minimal fix, and add a regression test.”
-- “Review this diff for actionable correctness and security issues; cite file/line evidence.”
-- “Build a polished, responsive web app page for this product—not a slide or static mockup. Inspect the existing framework, design system, assets, routes, and local run process first. Make the hierarchy, typography, spacing, palette, and interactions feel intentional; ensure every control works and verify the main flow.”
-- “Improve this UI: keep the current local hosting and API conventions, use semantic HTML, implement loading/empty/error states, and check mobile layout and keyboard access. Tell me which checks you actually ran.”
-- “Integrate the current DeepSeek API in this backend. Verify official docs and keep the API key server-side.”
+- “Inspect this project and build the requested Discord bot feature using its existing framework and architecture. Choose slash, prefix, or context-menu commands based on the actual use case, implement permissions and failure states, add tests, and report checks run.”
+- “Upgrade this bot's message UI using the current Discord Components V2 API supported by the installed library. Check the official docs first; make every control functional and handle interaction ownership, expiry, and errors.”
+- “Build this page in the existing app, not a static mockup. Follow its design system, make it responsive and accessible, implement the real flow, and verify it.”
+- “Reproduce this bug, trace the root cause, add a regression test, and report the evidence.”
+- “Review this diff for correctness, security, regressions, and test gaps. Cite actionable file/line evidence.”
 
 ## Validate
 
@@ -44,15 +58,17 @@ python3 scripts/validate_skill.py
 python3 -m unittest discover -s tests -v
 ```
 
-## Accuracy and scope
+## Accuracy
 
-Model IDs, endpoints, features, limits, and pricing can change; confirm them from current official DeepSeek docs. Framework APIs and commands are version-specific; inspect project manifests and maintainers' docs. Browser, localhost, and deployment behavior can only be claimed as verified when the relevant checks were actually run.
+Discord API behavior, Components V2, library support, permission/intents requirements, and limits evolve. Verify platform details in current official Discord documentation and inspect the bot's installed library/version before implementation. DeepSeek model IDs, endpoints, features, and pricing can also change; consult current official DeepSeek docs.
 
-## Official/reference links
+## Official references
 
+- [Discord Developer Documentation](https://docs.discord.com/developers/)
+- [Discord Components Reference](https://docs.discord.com/developers/components/reference)
+- [Discord Application Commands](https://docs.discord.com/developers/interactions/application-commands)
+- [Discord Gateway Intents](https://docs.discord.com/developers/events/gateway)
 - [DeepSeek API docs](https://api-docs.deepseek.com/)
-- [DeepSeek API platform](https://platform.deepseek.com/)
-- [DeepSeek consumer chat](https://chat.deepseek.com/)
 - [Agent Skills specification](https://agentskills.io/)
 
 ## License
