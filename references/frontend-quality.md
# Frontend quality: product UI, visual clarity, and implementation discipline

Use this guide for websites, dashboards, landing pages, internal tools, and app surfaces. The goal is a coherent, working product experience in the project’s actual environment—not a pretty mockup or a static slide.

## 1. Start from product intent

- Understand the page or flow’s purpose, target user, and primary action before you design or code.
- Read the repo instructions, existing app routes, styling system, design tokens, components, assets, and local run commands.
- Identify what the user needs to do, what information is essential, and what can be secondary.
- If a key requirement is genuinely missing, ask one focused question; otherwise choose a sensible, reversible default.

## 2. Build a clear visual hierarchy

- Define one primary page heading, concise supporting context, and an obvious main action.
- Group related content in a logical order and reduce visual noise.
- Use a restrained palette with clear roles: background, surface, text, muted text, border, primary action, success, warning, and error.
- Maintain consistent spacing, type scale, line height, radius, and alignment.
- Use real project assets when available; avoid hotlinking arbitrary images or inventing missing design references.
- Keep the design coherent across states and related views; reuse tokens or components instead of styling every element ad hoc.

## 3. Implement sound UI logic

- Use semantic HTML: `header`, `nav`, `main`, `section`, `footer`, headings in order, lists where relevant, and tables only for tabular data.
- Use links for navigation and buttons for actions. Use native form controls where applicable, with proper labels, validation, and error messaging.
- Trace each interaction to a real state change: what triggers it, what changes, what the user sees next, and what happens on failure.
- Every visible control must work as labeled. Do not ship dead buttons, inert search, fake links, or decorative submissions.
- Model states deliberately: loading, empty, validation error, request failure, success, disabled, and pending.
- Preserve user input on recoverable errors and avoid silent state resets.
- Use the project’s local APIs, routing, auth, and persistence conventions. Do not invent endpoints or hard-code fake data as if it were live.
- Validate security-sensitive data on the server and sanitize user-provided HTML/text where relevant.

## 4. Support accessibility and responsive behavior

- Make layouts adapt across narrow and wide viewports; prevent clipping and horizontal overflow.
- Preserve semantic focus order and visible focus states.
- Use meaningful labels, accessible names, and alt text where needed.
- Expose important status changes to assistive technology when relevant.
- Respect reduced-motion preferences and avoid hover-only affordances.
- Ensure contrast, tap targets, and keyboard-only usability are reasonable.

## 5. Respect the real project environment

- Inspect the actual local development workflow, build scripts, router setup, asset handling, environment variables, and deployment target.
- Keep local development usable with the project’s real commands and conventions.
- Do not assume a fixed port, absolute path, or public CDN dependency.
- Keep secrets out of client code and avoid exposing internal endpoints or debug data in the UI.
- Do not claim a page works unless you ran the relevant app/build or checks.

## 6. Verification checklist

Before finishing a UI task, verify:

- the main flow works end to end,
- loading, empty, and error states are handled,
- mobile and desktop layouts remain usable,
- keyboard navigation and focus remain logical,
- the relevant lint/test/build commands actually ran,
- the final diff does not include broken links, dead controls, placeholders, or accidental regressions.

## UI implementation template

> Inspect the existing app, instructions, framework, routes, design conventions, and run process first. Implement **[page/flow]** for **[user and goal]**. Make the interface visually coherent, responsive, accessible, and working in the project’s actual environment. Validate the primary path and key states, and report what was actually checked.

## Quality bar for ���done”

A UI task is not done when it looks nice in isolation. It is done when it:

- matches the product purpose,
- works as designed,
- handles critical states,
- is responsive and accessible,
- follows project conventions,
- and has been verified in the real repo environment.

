@@ -1,0 +1,5 @@
+interface:
+  display_name: "DeepSeek Coding Agent"
+  short_description: "Repository-grounded coding for features, UI, logic, debugging, testing, and safe integrations"
+  default_prompt: "Inspect the repository instructions and relevant files, identify the real task and constraints, implement the smallest correct change, verify with focused checks, and report evidence, risks, and remaining gaps."
+

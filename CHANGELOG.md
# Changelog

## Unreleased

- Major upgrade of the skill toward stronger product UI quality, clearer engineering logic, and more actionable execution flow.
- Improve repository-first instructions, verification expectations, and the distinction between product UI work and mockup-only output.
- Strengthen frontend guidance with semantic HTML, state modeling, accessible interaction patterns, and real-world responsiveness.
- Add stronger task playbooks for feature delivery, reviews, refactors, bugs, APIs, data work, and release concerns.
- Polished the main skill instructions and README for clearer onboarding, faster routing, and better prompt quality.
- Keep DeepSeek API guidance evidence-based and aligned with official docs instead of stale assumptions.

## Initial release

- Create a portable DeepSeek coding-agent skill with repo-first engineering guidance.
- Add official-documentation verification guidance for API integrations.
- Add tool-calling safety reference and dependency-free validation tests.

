@@ -1,0 +1,129 @@
+# Coding task playbooks
+
+Use the relevant checklist; do not apply every section to every task. Start from project instructions and inspect existing patterns before coding.
+
+## Feature implementation
+
+1. Convert the request into concrete acceptance criteria and non-goals.
+2. Identify the relevant entry points, data flow, existing tests, and public contracts.
+3. Choose the smallest design compatible with the repo and its conventions.
+4. Implement the behavior end to end, including validation and failure handling.
+5. Add a focused test for the externally visible behavior and the key edge cases.
+6. Update docs or examples if behavior or setup changed.
+7. Run the relevant check and inspect the final diff.
+
+## Bug fix
+
+1. Capture the exact symptom, inputs, environment, and reproduction path.
+2. Locate the first incorrect state or assumption using logs, tests, and call flow.
+3. Distinguish the root cause from downstream symptoms.
+4. Add a regression test where practical.
+5. Make the narrow fix and check adjacent callers or flows.
+6. Run the relevant regression checks and report any environment gap.
+
+## Code review
+
+- Review the actual diff and surrounding code rather than just commit messages.
+- Prioritize correctness, security, data loss risk, regression potential, and test gaps.
+- Support each finding with file/line evidence and an impact statement.
+- Separate confirmed defects from concerns or unverified anomalies.
+- Mention any coverage limitations or unknowns.
+
+## Refactoring
+
+- State the behavior or invariants that must remain unchanged.
+- Identify callers, tests, and contract boundaries before touching interfaces.
+- Prefer mechanical, incremental edits over broad cleanup mixed with feature work.
+- Run regression checks before and after when practical.
+- Document any intentional compatibility or migration impact.
+
+## Frontend and product UI
+
+Use [`frontend-quality.md`](frontend-quality.md). Before coding, identify:
+
+- the user and the task,
+- the page or flow goal,
+- the information hierarchy,
+- the main interaction and primary action,
+- the visual system and local app conventions,
+- and the relevant verification path.
+
+A UI task is not done when the view looks acceptable in isolation; it is done when the experience works, stays consistent, and is verified in context.
+
+## Backend and services
+
+- Trace the request -> validation/auth -> business logic -> persistence/external dependency -> response.
+- Validate input at boundaries and centralize domain rules instead of duplicating them in handlers.
+- Handle retries, cancellation, idempotency, timeouts, and partial failures where relevant.
+- Avoid leaking internal exceptions, secrets, or personal data.
+- Test success, validation, auth, dependency failure, and retry paths as appropriate.
+
+## API design and integration
+
+- Check existing versioning, naming, error format, auth, and compatibility conventions.
+- Define request/response and error behavior clearly.
+- Validate payloads, limits, serialization, parsing, and timeouts.
+- Do not guess provider SDK methods, endpoints, or model identifiers; consult version-specific official docs.
+- Test the normal path and key failure modes.
+
+## Database and data work
+
+- Inspect schema, indexes, constraints, ORM conventions, and migration history first.
+- Preserve data, and make migrations explicit and reversible where feasible.
+- Consider nullability, uniqueness, concurrency, pagination, and rollout risks.
+- Never run destructive production queries or migrations without authorization and rollback planning.
+- Test boundary and recovery scenarios in a safe environment.
+
+## Tests and documentation
+
+Use [`testing-debugging.md`](testing-debugging.md). Tests should express externally observable behavior, not mirror implementation details. Keep docs and examples aligned with the actual commands and code paths.
+
+## Build, release, and operations
+
+- Inspect CI and deployment workflows before assuming local commands match production.
+- Prefer reproducible builds, pinned dependencies, least-privilege credentials, and observable failure states.
+- Explain rollout, migration, rollback, and monitoring implications for production-facing work.
+- Do not deploy, publish, rotate credentials, or change infrastructure without explicit authorization.
+
+## Exit criteria for a finished task
+
+A task is complete when:
+
+- the user-visible behavior matches the request,
+- the relevant checks ran and passed or had a clear reason to fail,
+- the diff is narrow and intentional,
+- key failure states were considered,
+- and the final summary is honest about verification and remaining limits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
